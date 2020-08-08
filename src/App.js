@@ -2,12 +2,12 @@ import React from 'react';
 
 import './global.css'
 
-import Logon from './pages/Logon';
+import CheckIn from './pages/CheckIn';
 
 
 function App() {
     return (
-        <Logon />
+        <CheckIn />
     );
 }
 
