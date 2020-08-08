@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import {FiLogIn} from 'react-icons/fi';
+import { Redirect } from 'react-router-dom';
 
 import api from '../../services/api';
 
@@ -11,22 +12,25 @@ import logoJSDay from '../../assets/596.png';
 
 export default function CheckIn(props){
     const[email, setEmail] = useState('');
+    const[error, setError] = useState('');
     const history = useHistory();
 
     async function handleLogin(e){
         e.preventDefault();
-
+        if(email == ''){
+            alert('Por favor preencha seu email no campo indicado');
+            return;
+        }
         try{
             //const response = await api.post('/sessions', {email});
             //console.log(response.data.name);
             //localStorage.setItem('ongId', email);
             //localStorage.setItem('ongName', response.data.name);
-
-            //history.push('/profile');
             console.log('Fazendo post do e-mail...' + email);
             console.log('redirecionando...' + email);
+            window.location.href = "https://www.youtube.com/watch?v=tvzgh9PhFf4";
         }catch(err){
-            alert('Falha no login, tente novamente.');
+            alert('Por favor preencha seu email no campo indicado');
         }
     }
 
@@ -37,6 +41,8 @@ export default function CheckIn(props){
 
                 <form onSubmit={handleLogin}>
                     <h1>Faça seu check-in</h1>
+                    
+                    {error ? <h1>Error Aqui</h1> : ''}
                     <input
                         placeholder="E-mail"
                         value={email}
