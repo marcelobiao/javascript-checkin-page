@@ -17,15 +17,12 @@ export default function CheckIn(props){
 
     async function handleLogin(e){
         e.preventDefault();
-        if(email == ''){
-            alert('Por favor preencha seu email no campo indicado');
-            return;
-        }
+        
         try{
-            //const response = await api.post('/sessions', {email});
-            //console.log(response.data.name);
-            //localStorage.setItem('ongId', email);
-            //localStorage.setItem('ongName', response.data.name);
+            if(email == ''){
+                alert('Por favor preencha seu email no campo indicado');
+                return;
+            }
             console.log('Fazendo post do e-mail...' + email);
             console.log('redirecionando...' + email);
             window.location.href = "https://www.youtube.com/watch?v=tvzgh9PhFf4";
@@ -41,8 +38,6 @@ export default function CheckIn(props){
 
                 <form onSubmit={handleLogin}>
                     <h1>Faça seu check-in</h1>
-                    
-                    {error ? <h1>Error Aqui</h1> : ''}
                     <input
                         placeholder="E-mail"
                         value={email}
