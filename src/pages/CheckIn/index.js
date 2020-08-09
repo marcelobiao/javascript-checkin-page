@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import {FiLogIn} from 'react-icons/fi';
 import { Redirect } from 'react-router-dom';
+import firebase from 'firebase';
 
 import api from '../../services/api';
 
@@ -17,17 +18,17 @@ export default function CheckIn(props){
 
     async function handleLogin(e){
         e.preventDefault();
-        
+        console.log(process.env.teste);
         try{
             if(email == ''){
                 alert('Por favor preencha seu email no campo indicado');
                 return;
             }
-            console.log('Fazendo post do e-mail...' + email);
-            console.log('redirecionando...' + email);
+            
+
             window.location.href = "https://www.youtube.com/watch?v=tvzgh9PhFf4";
         }catch(err){
-            alert('Por favor preencha seu email no campo indicado');
+            alert(err);
         }
     }
 
