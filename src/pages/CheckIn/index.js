@@ -18,7 +18,7 @@ export default function CheckIn(props){
 
     async function handleLogin(e){
         e.preventDefault();
-        console.log(process.env.teste);
+        console.log('Teste' + process.env.teste);
         try{
             if(email == ''){
                 alert('Por favor preencha seu email no campo indicado');
@@ -26,7 +26,7 @@ export default function CheckIn(props){
             }
             
 
-            window.location.href = "https://www.youtube.com/watch?v=tvzgh9PhFf4";
+            //window.location.href = "https://www.youtube.com/watch?v=tvzgh9PhFf4";
         }catch(err){
             alert(err);
         }
