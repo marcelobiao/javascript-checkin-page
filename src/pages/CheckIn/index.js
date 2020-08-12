@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, Fragment} from 'react';
 import axios from 'axios';
 
 import './styles.css';
@@ -23,24 +23,25 @@ export default function CheckIn(props){
     }
 
     return (
-        <div className="logon-container">
-            <section className="form">
-                <img src={logoGdg} alt="Be The Hero"></img>
+        <Fragment>
+            <div className="logon-container">
+                <section className="form">
 
-                <form onSubmit={handleLogin}>
-                    <h1>Faça seu check-in</h1>
-                    <input
-                        placeholder="E-mail"
-                        value={email}
-                        type="email"
-                        onChange={e => setEmail(e.target.value)}
-                    />
-                    <button className="button" type="submit">Entrar</button>
+                    <form onSubmit={handleLogin}>
+                        <h1>Faça seu check-in</h1>
+                        <input
+                            placeholder="E-mail"
+                            value={email}
+                            type="email"
+                            onChange={e => setEmail(e.target.value)}
+                            />
+                        <button className="button" type="submit">Entrar</button>
 
-                </form>
-            </section>
+                    </form>
+                </section>
 
-            <img src={logoJSDay} alt="Heroes"></img>
-        </div>
+                <img src={logoJSDay} alt="Heroes"></img>
+            </div>
+        </Fragment>
     );
 }
